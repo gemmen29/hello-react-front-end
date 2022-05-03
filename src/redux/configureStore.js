@@ -1,4 +1,6 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import {
+  createStore, combineReducers, applyMiddleware, compose,
+} from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import messageReducer from './greetings/greetings';
@@ -11,7 +13,7 @@ const reducers = combineReducers({
 
 const store = createStore(
   reducers,
-  composeEnhancers(applyMiddleware(thunk, logger))
+  composeEnhancers(applyMiddleware(thunk, logger)),
 );
 
 export default store;

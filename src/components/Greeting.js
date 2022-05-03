@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { getRandomMessage } from '../redux/greetings/greetings';
 import { useSelector, useDispatch } from 'react-redux';
+import { getRandomMessage } from '../redux/greetings/greetings';
 
 const Greeting = () => {
   const dispatch = useDispatch();
@@ -10,12 +10,14 @@ const Greeting = () => {
   }, [dispatch]);
 
   const message = useSelector((state) => state.message);
-  console.log('message => ', message);
 
   return (
     <div>
       <h1>Greeting</h1>
-      <div>Message: {message.message}</div>
+      <div>
+        Message:
+        {message.message}
+      </div>
     </div>
   );
 };
